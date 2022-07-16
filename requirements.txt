@@ -12,5 +12,5 @@ sklearn==0.0
 spacy==3.4.0
 textblob==0.17.1
 wordcloud==1.8.2.2
-xgboost==1.6.1
+xgboost==1.0.2
 numba==0.48.0
