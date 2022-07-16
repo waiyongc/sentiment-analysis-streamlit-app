@@ -3,8 +3,7 @@ import streamlit as st
 import pandas as pd
 import joblib
 import pickle 
-import sklearn
-from sklearn.ensemble import GradientBoostingClassifier
+import xgboost
 import matplotlib.pyplot as plt
 from plotly import express as px
 from emot.emo_unicode import UNICODE_EMOJI
