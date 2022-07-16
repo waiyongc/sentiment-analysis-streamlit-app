@@ -3,7 +3,6 @@ import streamlit as st
 import pandas as pd
 import joblib
 import pickle 
-import xgboost
 import matplotlib.pyplot as plt
 from plotly import express as px
 from emot.emo_unicode import UNICODE_EMOJI
