@@ -11,6 +11,8 @@ from sklearn.feature_extraction.text import TfidfVectorizer, CountVectorizer
 from textblob import Word
 from nltk.stem import WordNetLemmatizer
 from wordcloud import WordCloud, STOPWORDS, ImageColorGenerator
+import nltk
+nltk.download('wordnet')
 import scattertext as sct
 import spacy
 import en_core_web_sm
