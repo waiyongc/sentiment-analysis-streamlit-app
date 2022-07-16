@@ -1,6 +1,6 @@
 import _imp
 import streamlit as st
-import xgboost
+from xgboost import XGBClassifier
 import pandas as pd
 import joblib
 import pickle 
