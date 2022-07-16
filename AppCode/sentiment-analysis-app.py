@@ -13,6 +13,7 @@ from nltk.stem import WordNetLemmatizer
 from wordcloud import WordCloud, STOPWORDS, ImageColorGenerator
 import nltk
 nltk.download('wordnet')
+nltk.download('omw-1.4')
 import scattertext as sct
 import spacy
 import en_core_web_sm
