@@ -77,13 +77,13 @@ def main():
             stopwords = stopwords.union(["ha", "thi", "now", "onli", "im", "becaus", "wa", "will", "even", "go", "realli", "didnt", "abl"])
             col1,col2=st.columns((4,6))
             with col1:
-                st.markdown("### Sentiment Label Distribution")
+                st.markdown("#### Number of Reviews in Each Sentiment Label")
                 val_count=classified_dataset['Sentiment_Label'].value_counts()
                 chart1=px.bar(x=val_count.index, y=val_count.values, color=val_count.index, text_auto=True, width=400)
                 chart1.update_layout(xaxis_title="Sentiment", yaxis_title="Count", legend_title="Sentiment")
                 st.write(chart1)
             with col2:
-                st.markdown("### Most Frequent 3 Word Phrases in the dataset")
+                st.markdown("#### Most Frequent 3 Word Phrases in the dataset")
                 common_words = get_top_n_trigram(classified_dataset['Review'], 20)
                 df1 = pd.DataFrame(common_words, columns = ['Review_Text' , 'Count'])
                 chart2=px.bar(df1,x='Count',y='Review_Text',orientation='h',text_auto=True, height=600)
