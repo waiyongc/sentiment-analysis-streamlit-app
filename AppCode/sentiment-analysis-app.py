@@ -138,6 +138,7 @@ def dataModellingForText(text):
     text = lemmatizer.lemmatize(text)                           
     text = convert_emojis_to_words(text)
     text = text.replace('[^\w\s]', '')
+    text = text.replace("_", " ")
     text=[text]
     tf_text = TFIDF_vectorizer.transform(text)
     prediction=loaded_model.predict(tf_text)
