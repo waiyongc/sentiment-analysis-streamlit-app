@@ -21,7 +21,7 @@ nlp = spacy.load('en_core_web_sm')
 
 st.set_page_config(page_title="Sentiment Analysis App",layout="wide")
 
-@st.cache
+@st.cache(allow_output_mutation=True)
 def load_vectorizer():
     return pickle.load(open('AppCode/latest_vectorizer.pk','rb'))
 
