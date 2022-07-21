@@ -18,13 +18,11 @@ import scattertext as sct
 import spacy
 import en_core_web_sm
 
+st.set_page_config(page_title="Sentiment Analysis App",layout="wide")
+
 @st.cache(allow_output_mutation=True)
 def load_nlp():
     return spacy.load('en_core_web_sm')
-
-nlp=load_nlp()
-
-st.set_page_config(page_title="Sentiment Analysis App",layout="wide")
 
 @st.cache(allow_output_mutation=True)
 def load_vectorizer():
@@ -34,6 +32,7 @@ def load_vectorizer():
 def load_model():
     return joblib.load(open('AppCode/latest_XGB_Model.pkl','rb'))
 
+nlp=load_nlp()
 TFIDF_vectorizer=load_vectorizer()
 loaded_model=load_model()
 
