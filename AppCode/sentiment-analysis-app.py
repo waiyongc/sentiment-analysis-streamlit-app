@@ -19,7 +19,7 @@ import spacy
 import en_core_web_sm
 
 @st.cache
-def load_nlp():
+def load_nlp(allow_output_mutation=True):
     return spacy.load('en_core_web_sm')
 
 nlp=load_nlp()
