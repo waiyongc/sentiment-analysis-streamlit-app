@@ -21,8 +21,16 @@ nlp = spacy.load('en_core_web_sm')
 
 st.set_page_config(page_title="Sentiment Analysis App",layout="wide")
 
-TFIDF_vectorizer=pickle.load(open('AppCode/latest_vectorizer.pk','rb'))
-loaded_model=joblib.load(open('AppCode/latest_XGB_Model.pkl','rb'))
+@st.cache
+def load_vectorizer():
+    return pickle.load(open(r'latest_vectorizer.pk','rb'))
+
+@st.cache
+def load_model():
+    return joblib.load(open(r'latest_XGB_Model.pkl','rb'))
+
+TFIDF_vectorizer=load_vectorizer()
+loaded_model=load_model()
 
 @st.experimental_singleton 
 def convert_emojis_to_words(text):
