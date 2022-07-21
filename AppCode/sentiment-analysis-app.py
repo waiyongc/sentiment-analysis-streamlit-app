@@ -18,8 +18,8 @@ import scattertext as sct
 import spacy
 import en_core_web_sm
 
-@st.cache
-def load_nlp(allow_output_mutation=True):
+@st.cache(allow_output_mutation=True)
+def load_nlp():
     return spacy.load('en_core_web_sm')
 
 nlp=load_nlp()
