@@ -25,7 +25,7 @@ st.set_page_config(page_title="Sentiment Analysis App",layout="wide")
 def load_vectorizer():
     return pickle.load(open('AppCode/latest_vectorizer.pk','rb'))
 
-@st.cache
+@st.cache(hash_funcs={'xgboost.sklearn.XGBClassifier': id})
 def load_model():
     return joblib.load(open('AppCode/latest_XGB_Model.pkl','rb'))
 
