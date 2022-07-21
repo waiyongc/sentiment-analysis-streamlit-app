@@ -23,11 +23,11 @@ st.set_page_config(page_title="Sentiment Analysis App",layout="wide")
 
 @st.cache
 def load_vectorizer():
-    return pickle.load(open(r'latest_vectorizer.pk','rb'))
+    return pickle.load(open('AppCode/latest_vectorizer.pk','rb'))
 
 @st.cache
 def load_model():
-    return joblib.load(open(r'latest_XGB_Model.pkl','rb'))
+    return joblib.load(open('AppCode/latest_XGB_Model.pkl','rb'))
 
 TFIDF_vectorizer=load_vectorizer()
 loaded_model=load_model()
