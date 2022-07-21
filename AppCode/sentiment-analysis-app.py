@@ -17,7 +17,12 @@ nltk.download('omw-1.4')
 import scattertext as sct
 import spacy
 import en_core_web_sm
-nlp = spacy.load('en_core_web_sm')
+
+@st.cache
+def load_nlp():
+    return spacy.load('en_core_web_sm')
+
+nlp=load_nlp()
 
 st.set_page_config(page_title="Sentiment Analysis App",layout="wide")
 
